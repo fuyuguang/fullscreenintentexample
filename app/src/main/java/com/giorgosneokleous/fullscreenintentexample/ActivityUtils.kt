@@ -32,17 +32,34 @@ import android.view.WindowManager
 
 fun Activity.turnScreenOnAndKeyguardOff() {
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O_MR1) {
+        /**
+         * 退到后台后锁屏，在锁定屏幕顶部可以显示该activity
+         */
         setShowWhenLocked(true)
+        //亮屏
         setTurnScreenOn(true)
     } else {
         window.addFlags(
-            WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON
-                    or WindowManager.LayoutParams.FLAG_ALLOW_LOCK_WHILE_SCREEN_ON
+            /**
+             * 窗口标志：只要该窗口对用户可见，就保持设备的屏幕打开且明亮。
+             */
+            WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON or
+                    /**
+                     * 窗口标志：只要该窗口对用户可见，就允许在屏幕打开时激活锁定屏幕。这可以单独使用，
+                    也可以与 FLAG_KEEP_SCREEN_ON 和/或 FLAG_SHOW_WHEN_LOCKED 结合使用
+                     */
+                    WindowManager.LayoutParams.FLAG_ALLOW_LOCK_WHILE_SCREEN_ON
         )
     }
 
     with(getSystemService(Context.KEYGUARD_SERVICE) as KeyguardManager) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            /**
+            如果设备当前被锁定（参见 isKeyguardLocked()，请求解除 Keyguard。
+            如果 Keyguard 不安全或设备当前处于受信任状态，调用此方法将立即关闭 Keyguard，无需任何用户交互。
+            如果 Keyguard 是安全的并且设备不处于受信任状态，这将打开 UI，以便用户可以输入他们的凭据。
+            如果为 Activity attr android.R.attr.turnScreenOn 设置的值为 true，则在解除键盘保护时屏幕将打开。
+             */
             requestDismissKeyguard(this@turnScreenOnAndKeyguardOff, null)
         }
     }

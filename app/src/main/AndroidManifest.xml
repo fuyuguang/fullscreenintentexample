@@ -26,6 +26,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.giorgosneokleous.fullscreenintentexample">
 
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
     <uses-permission android:name="android.permission.USE_FULL_SCREEN_INTENT" />
 
     <application
@@ -49,6 +50,16 @@
         <activity android:name=".LockScreenActivity"
             android:showOnLockScreen="true"/>
 
+        <activity android:name=".VideoCallActivity"
+            android:showOnLockScreen="true"/>
+
+
+        <activity android:name=".service.ResultActivity" />
+
+        <service
+            android:name=".service.ApkDownloadService"
+            android:enabled="true"
+            android:exported="false" />
         <receiver
             android:name=".NotificationReceiver"
             android:enabled="true"

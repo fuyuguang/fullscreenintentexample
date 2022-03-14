@@ -56,10 +56,76 @@
         android:id="@+id/showFullScreenIntentLockScreenWithDelayButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="@string/show_scheduled_full_screen_intent_lock_screen"
+        android:contentDescription="@string/show_scheduled_full_screen_intent_lock_screen"
+        android:text="3秒后模拟闹钟响铃"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHeight_min="wrap"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/showFullScreenIntentWithDelayButton"
         app:layout_constraintWidth_min="wrap" />
+
+
+    <Button
+        android:id="@+id/showVideoCallNotification"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/show_scheduled_full_screen_intent_lock_screen"
+        android:text="3秒后模拟微信视频来电"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_min="wrap"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/showFullScreenIntentLockScreenWithDelayButton"
+        app:layout_constraintWidth_min="wrap" />
+
+
+
+
+    <Button
+        android:id="@+id/isOpenNotificationPermission"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="检查通知权限是否开启"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_min="wrap"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/showVideoCallNotification"
+        app:layout_constraintWidth_min="wrap" />
+
+
+
+
+    <Button
+        android:id="@+id/gotoAppNotificationSetting"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="打开app的通知设置页"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_min="wrap"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/isOpenNotificationPermission"
+        app:layout_constraintWidth_min="wrap" />
+
+    <Button
+        android:id="@+id/particularChannel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="打开特定渠道通知设置页"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_min="wrap"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/gotoAppNotificationSetting"
+        app:layout_constraintWidth_min="wrap" />
+
+
+    <Button
+        android:id="@+id/downloadApk"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="下载apk"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_min="wrap"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/particularChannel"
+        app:layout_constraintWidth_min="wrap" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

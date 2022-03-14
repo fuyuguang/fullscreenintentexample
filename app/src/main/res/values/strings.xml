@@ -29,4 +29,9 @@
     <string name="show_scheduled_full_screen_intent_lock_screen">Scheduled full screen intent for lock screen</string>
     <string name="full_screen_activity">Full Screen Activity</string>
     <string name="lock_screen_activity">Lock Screen Activity</string>
+    <string name="notification_your_request_is_done">下载...</string>
+    <string name="notification_your_request_is_success" >下载完成</string>
+    <string name="notification_your_request_is_fail" >下载失败</string>
+    <string name="notification_download">下载..</string>
+    <string name="notification_downloading">下载>>></string>
 </resources>

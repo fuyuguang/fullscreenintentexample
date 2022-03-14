@@ -24,21 +24,41 @@
 
 package com.giorgosneokleous.fullscreenintentexample
 
-import android.os.Bundle
+import android.content.Intent
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import android.util.Log
+import android.view.View
+import android.view.ViewGroup
+import android.widget.TextView
 /**
- * Created by fuyuguang on 2022/3/10 4:49 下午.
+ * Created by fuyuguang on 2022/3/10 4:52 下午.
  * E-Mail ：2355245065@qq.com
  * Wechat :fyg13522647431
  * Tel : 13522647431
  * 修改时间：
  * 类描述：
  * 备注：
- * 用户
+ * 1，当单击 【3秒后模拟微信视频来电】按钮后，把应用切到后台，然后锁屏，，3秒后，该页面会直接在锁屏的上层界面显示，该页面关闭后，会显示锁屏页。
+ * 2，在该页面，可以实现永不锁屏的效果（锁屏按钮无效）setShowWhenLocked(true)
  */
-class FullScreenActivity : AppCompatActivity() {
+class VideoCallActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_full_screen)
+        turnScreenOnAndKeyguardOff()
+        Log.e("log","VideoCallActivity onCreate")
+        setContentView(TextView(this).also {
+            it.text = "VideoCallActivity"
+            it.layoutParams= ViewGroup.LayoutParams(300,300)
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                it.setBackgroundColor(getColor(R.color.colorAccent))
+            }
+        })
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        turnScreenOffAndKeyguardOn()
     }
 }

@@ -26,7 +26,15 @@ package com.giorgosneokleous.fullscreenintentexample
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-
+/**
+ * Created by fuyuguang on 2022/3/10 4:52 下午.
+ * E-Mail ：2355245065@qq.com
+ * Wechat :fyg13522647431
+ * Tel : 13522647431
+ * 修改时间：
+ * 类描述：
+ * 备注：
+ */
 class LockScreenActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

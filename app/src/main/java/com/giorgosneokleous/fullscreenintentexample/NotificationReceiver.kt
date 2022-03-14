@@ -27,13 +27,16 @@ package com.giorgosneokleous.fullscreenintentexample
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
+import android.util.Log
 
 class NotificationReceiver : BroadcastReceiver() {
 
     override fun onReceive(context: Context, intent: Intent) {
         if(intent.getBooleanExtra(LOCK_SCREEN_KEY, true)) {
+            Log.e("log","onReceive onCreate")
             context.showNotificationWithFullScreenIntent(true)
         } else {
+            Log.e("log","onReceive onCreate")
             context.showNotificationWithFullScreenIntent()
         }
     }

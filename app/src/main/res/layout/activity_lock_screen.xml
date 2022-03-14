@@ -31,8 +31,10 @@
     tools:context=".LockScreenActivity">
 
     <TextView
+        android:id="@+id/lock_screen_activity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
         android:text="@string/lock_screen_activity"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
