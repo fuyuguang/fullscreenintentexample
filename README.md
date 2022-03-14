@@ -10,3 +10,7 @@ Blog post can be found [here](https://www.giorgosneokleous.com/2020/03/15/full-s
 # License
 
 See the [LICENSE](https://github.com/giorgosneokleous93/fullscreenintentexample/blob/master/LICENSE) file for license rights and limitations (MIT).
+
+
+
+<img src="README.assets/Screenshot_20220314_182124.png" alt="Screenshot_20220314_182124" style="zoom:67%;" />
